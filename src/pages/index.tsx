@@ -1,9 +1,12 @@
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-
-import addDocument from 'api/firebaseConfig';
-
+import { MainLayout } from '@/Layouts';
+import { Main, SideBar } from '@/Components';
 export default function Home() {
   // addDocument();
-  return <></>;
+  return (
+    <MainLayout>
+      <SideBar />
+      <Main />
+    </MainLayout>
+  );
 }
