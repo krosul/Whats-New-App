@@ -12,7 +12,9 @@ export const MessagesLayout: FC<Props> = ({ messages }) => {
   return (
     <Flex direction="column" h="full" w="100%" justify="flex-end" gap="1">
       {messages[0] &&
-        messages.map((m, index) => <Message messageProp={m} index={index} />)}
+        messages.map((m, index) => (
+          <Message messageProp={m} index={index} key={index} />
+        ))}
     </Flex>
   );
 };

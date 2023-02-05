@@ -26,8 +26,15 @@ export const DataProvider: FC<PropsWithChildren> = ({ children }) => {
           email: 'jprp_2403@live.com',
           image: 'algo',
           messages: [
-            { message: 'yo', from: 'me' },
-            { message: 'yo', from: 'other' },
+            {
+              message: 'Adipisicing quis ea ullamco ea reprehenderit dolore.',
+              from: 'me',
+            },
+            {
+              message:
+                'Mollit nostrud eiusmod magna ea aute. In officia dolor nisi ipsum minim quis. Incididunt amet magna mollit do velit ea. Amet anim nulla cillum laboris laboris commodo irure nisi.',
+              from: 'other',
+            },
           ],
         },
         {
