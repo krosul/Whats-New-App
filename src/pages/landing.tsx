@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MainLayout } from '@/Layouts';
+
 import {
   Flex,
   Heading,
@@ -16,11 +17,13 @@ import icono from '@public/favicon.ico';
 import GoogleIcon from '@public/google.png';
 import FacebookIcon from '@public/facebook.png';
 import GmailIcon from '@public/gmail.png';
+import { loginWithGoogle } from 'Auth/OathGoogle';
 type OptionsState = 'button-login-menu' | 'inputs-login-menu';
 
 const landing = () => {
   const [SelectedOptionLogin, setSelectedOptionLogin] =
     useState<OptionsState>('button-login-menu');
+
   return (
     <MainLayout>
       <Flex
@@ -62,6 +65,7 @@ const landing = () => {
                   bg="brand.main"
                   h="16"
                   _hover={{ bg: 'brand.paragraph' }}
+                  onClick={() => loginWithGoogle()}
                 >
                   <Image src={GoogleIcon.src} w="10" h="10" />
                   Continuar con Google
@@ -80,6 +84,7 @@ const landing = () => {
                   bg="brand.main"
                   h="16"
                   _hover={{ bg: 'brand.paragraph' }}
+                  onClick={() => setSelectedOptionLogin('inputs-login-menu')}
                 >
                   <Image src={GmailIcon.src} w="10" h="10" />
                   Continuar con Gmail
