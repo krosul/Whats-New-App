@@ -8,6 +8,7 @@ export interface ContextProps {
 
   loadContactsUser: () => Promise<void>;
   setSelectedUser: (user: UserContact) => void;
+  setDataFromLogin: (user: any) => void;
 }
 
 export const DataContext = createContext({} as ContextProps);

@@ -92,9 +92,13 @@ export const DataProvider: FC<PropsWithChildren> = ({ children }) => {
   const setSelectedUser = (user: UserContact) => {
     dispatch({ type: 'Selected contact', payload: user });
   };
+
+  const setDataFromLogin = (user: any) => {
+    dispatch({ type: 'Load user data', payload: user });
+  };
   return (
     <DataContext.Provider
-      value={{ ...state, loadContactsUser, setSelectedUser }}
+      value={{ ...state, loadContactsUser, setSelectedUser, setDataFromLogin }}
     >
       {children}
     </DataContext.Provider>

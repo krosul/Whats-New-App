@@ -23,7 +23,10 @@ type OptionsState = 'button-login-menu' | 'inputs-login-menu';
 const landing = () => {
   const [SelectedOptionLogin, setSelectedOptionLogin] =
     useState<OptionsState>('button-login-menu');
-
+  const handleLoginWithGoogle = async () => {
+    const { state, payload } = await loginWithGoogle();
+    console.log(payload);
+  };
   return (
     <MainLayout>
       <Flex
@@ -65,7 +68,7 @@ const landing = () => {
                   bg="brand.main"
                   h="16"
                   _hover={{ bg: 'brand.paragraph' }}
-                  onClick={() => loginWithGoogle()}
+                  onClick={() => handleLoginWithGoogle()}
                 >
                   <Image src={GoogleIcon.src} w="10" h="10" />
                   Continuar con Google
